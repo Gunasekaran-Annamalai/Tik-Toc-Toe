@@ -8,3 +8,7 @@ def display_board():
     print(board[6] + " | " + board[7] + " | " + board[8])
 
 display_board()
+
+def navigator():
+    print("Choose any place in between 1-9:")
+navigator()
