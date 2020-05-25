@@ -6,7 +6,7 @@ class game_begins:
     for i in range(2):
         print("")
 
-    print('Game Begins')
+    print('Game Begins\n')
     def game_starts(self):
 
         board = ['-', '-', '-', 
@@ -23,6 +23,15 @@ class game_begins:
         def navigator():
             print("Choose any place in between 1-9:")
         navigator()
+
+        def player_x():
+            print('\'X\' turn...')
+            
+        player_x()
+
+        def player_o():
+            print('\'O\' turn...')
+        player_o()
 
 obj = game_begins()
 obj.game_starts()
