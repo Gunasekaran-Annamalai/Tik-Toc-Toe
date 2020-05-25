@@ -28,10 +28,9 @@ class game_begins:
             limit_checker_1 = True
             while(limit_checker_1):
                 x_decision = int(input('Enter any number : '))
-                if(x_decision <= 9):
-                    print("Something")
+                if(x_decision <= 9 and x_decision > 0):
                     limit_checker_1 = False
-                else: print()
+                else: print("Error enter correct choice")
         player_x()
 
         def player_o():
