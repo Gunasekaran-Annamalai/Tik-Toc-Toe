@@ -1,6 +1,6 @@
 class game_begins:
-    user_x = input('Enter \'X\' name:')
-    user_O = input('Enter \'O\' name:')
+    x_name = input('Enter \'X\' name:')
+    O_name = input('Enter \'O\' name:')
 
     # just for some empty lines
     for i in range(2):
@@ -26,11 +26,16 @@ class game_begins:
 
         def player_x():
             print('\'X\' turn...')
-            
+            limit_checker_1 = True
+            while(limit_checker_1):
+                x_decision = int(input('Enter any number : '))
+                if(x_decision <= 9):
+                    print("Something")
         player_x()
 
         def player_o():
             print('\'O\' turn...')
+            x_decision = int(input('Enter any number : '))
         player_o()
 
 obj = game_begins()
