@@ -8,7 +8,6 @@ class game_begins:
 
     print('Game Begins\n')
     def game_starts(self):
-
         board = ['-', '-', '-', 
                 '-', '-', '-', 
                 '-', '-', '-']
@@ -31,6 +30,8 @@ class game_begins:
                 x_decision = int(input('Enter any number : '))
                 if(x_decision <= 9):
                     print("Something")
+                    limit_checker_1 = False
+                else: print()
         player_x()
 
         def player_o():
