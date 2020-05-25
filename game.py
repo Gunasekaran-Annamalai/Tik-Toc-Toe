@@ -3,8 +3,8 @@ class game_begins:
     O_name = input('Enter \'O\' name:')
 
     # just for some empty lines
-    for i in range(2):
-        print("")
+    print("")
+    print("")
 
     print('Game Begins\n')
     def game_starts(self):
@@ -25,17 +25,23 @@ class game_begins:
 
         def player_x():
             print('\'X\' turn...')
-            limit_checker_1 = True
-            while(limit_checker_1):
-                x_decision = int(input('Enter any number : '))
-                if(x_decision <= 9 and x_decision > 0):
-                    limit_checker_1 = False
+            limit_checker = True
+            while(limit_checker):
+                decision = int(input('Enter any number : '))
+                if(decision <= 9 and decision > 0):
+                    limit_checker = False
                 else: print("Error enter correct choice")
-        player_x()
 
         def player_o():
             print('\'O\' turn...')
-            x_decision = int(input('Enter any number : '))
+            limit_checker = True
+            while(limit_checker):
+                decision = int(input('Enter any number : '))
+                if(decision <= 9 and decision > 0):
+                    limit_checker = False
+                else: print("Error enter correct choice")
+        
+        player_x()
         player_o()
 
 obj = game_begins()
