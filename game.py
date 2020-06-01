@@ -1,6 +1,6 @@
 class game_begins:
     x_name = input('Enter \'X\' name:')
-    O_name = input('Enter \'O\' name:')
+    o_name = input('Enter \'O\' name:')
 
     # just for some empty lines
     print("")
@@ -9,8 +9,8 @@ class game_begins:
 
     def game_starts(self):
         self.board = ['-', '-', '-', 
-                '-', '-', '-', 
-                '-', '-', '-']
+                    '-', '-', '-', 
+                    '-', '-', '-']
         print('------------Game Begins-------------\n')
 
     def display_board(self):
@@ -34,6 +34,8 @@ class game_play(game_begins):
             decision = int(input('Enter any number : '))
             if(decision <= 9 and decision > 0):
                 limit_checker = False
+                self.board[2] = 'x'
+                print(self.board[2])
             else: print("Error enter correct choice")
 
     def player_o(self):
@@ -45,7 +47,18 @@ class game_play(game_begins):
                 limit_checker = False
             else: print("Error enter correct choice")
 
-gameobj = game_play()
+class game_winner(game_play, game_begins):
+    def check_diagonals(self):
+        self.board[0] == 'x'
+        print(self.board[0])
+        if(self.board[0] == self.board[1] == self.board[2]):
+            if(self.board[0] == 'x'): print(self.x_name+" won the game")
+            else: print("o won the game")
+
+gameobj = game_winner()
 gameobj.navigator()
 gameobj.game_starts()
 gameobj.display_board()
+gameobj.player_x()
+gameobj.player_o()
+gameobj.check_diagonals()
