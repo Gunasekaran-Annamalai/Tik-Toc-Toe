@@ -6,11 +6,12 @@ class game_begins:
     print("")
     print("")
 
-    print('Game Begins\n')
+
     def game_starts(self):
         self.board = ['-', '-', '-', 
                 '-', '-', '-', 
                 '-', '-', '-']
+        print('------------Game Begins-------------\n')
 
     def display_board(self):
         print(self.board[0] + " | " + self.board[1] + " | " + self.board[2])
@@ -18,6 +19,7 @@ class game_begins:
         print(self.board[6] + " | " + self.board[7] + " | " + self.board[8])
 
     def navigator(self):
+        print("--------------Game Navigator-------------")
         print("Choose any place in between 1-9:")
         print()
         print(1, "|", 2, "|", 3)
@@ -44,6 +46,6 @@ class game_play(game_begins):
             else: print("Error enter correct choice")
 
 gameobj = game_play()
-gameobj.game_starts()
 gameobj.navigator()
+gameobj.game_starts()
 gameobj.display_board()
