@@ -23,23 +23,60 @@ class game_begins:
         print(self.board[3] + " | " + self.board[4] + " | " + self.board[5])
         print(self.board[6] + " | " + self.board[7] + " | " + self.board[8])
 
-    def player_X(self, place):
+    def X_turn(self):
+        choice_1 = int(input("Enter the place to change into \'X\'"))
+        game.player_X(choice_1)
+
+    def Y_turn(self):
+        choice_2 = int(input("Enter the place to change into \'O\'"))
+        game.player_O(choice_2)
+
+    def player_X(self, place=-1):
         if self.board[place] == '-':
             self.board[place] = 'x'
-        game.display_board()
+            game.display_board()
+        elif self.board[place] == 'x':
+            game.X_turn()
+            game.display_board()
+        game.X_checker()
     
     def player_O(self, place):
         if self.board[place] == '-':
             self.board[place] = 'o'
         game.display_board()
+        game.O_checker()
 
-    def X_checker(self, x, o):
-        if self.board[0] == 'x' and self.board[1] == 'x' and self.board[2] == 'x':
+    def X_checker(self):
+        if ((self.board[0] == 'x' and self.board[1] == 'x' and self.board[2] == 'x') or
+            (self.board[3] == 'x' and self.board[4] == 'x' and self.board[5] == 'x') or 
+            (self.board[6] == 'x' and self.board[7] == 'x' and self.board[8] == 'x')):
             print(self.x_name + " won the game")
-        elif self.board[0] == 'x' and self.board[4] == 'x' and self.board[8] == 'x':
+            exit()
+        elif ((self.board[0] == 'x' and self.board[3] == 'x' and self.board[6] == 'x') or
+            (self.board[1] == 'x' and self.board[4] == 'x' and self.board[7] == 'x') or 
+            (self.board[2] == 'x' and self.board[5] == 'x' and self.board[8] == 'x')):
             print(self.x_name + " won the game")
-        elif self.board[2] == 'x' and self.board[4] == 'x' and self.board[6] == 'x':
+            exit()
+        elif ((self.board[0] == 'x' and self.board[5] == 'x' and self.board[8] == 'x') or
+            (self.board[3] == 'x' and self.board[5] == 'x' and self.board[6] == 'x')):
+            print(self.x_name + " won the game")
+            exit()
 
+    def O_checker(self):
+        if ((self.board[0] == 'o' and self.board[1] == 'o' and self.board[2] == 'o') or
+            (self.board[3] == 'o' and self.board[4] == 'o' and self.board[5] == 'o') or 
+            (self.board[6] == 'o' and self.board[7] == 'o' and self.board[8] == 'o')):
+            print(self.o_name + " won the game")
+            exit()
+        elif ((self.board[0] == 'o' and self.board[3] == 'o' and self.board[6] == 'o') or
+            (self.board[1] == 'o' and self.board[4] == 'o' and self.board[7] == 'o') or 
+            (self.board[2] == 'o' and self.board[5] == 'o' and self.board[8] == 'o')):
+            print(self.o_name + " won the game")
+            exit()
+        elif ((self.board[0] == 'o' and self.board[5] == 'o' and self.board[8] == 'o') or
+            (self.board[3] == 'o' and self.board[5] == 'o' and self.board[6] == 'o')):
+            print(self.o_name + " won the game")
+            exit()
 
 x = input('Enter \'X\' name:')
 o = input('Enter \'O\' name:')
@@ -47,46 +84,6 @@ o = input('Enter \'O\' name:')
 game = game_begins(x, o)
 game.display_board()
 
-while(game.board[0] == '-' or game.board[1] == '-' or game.board[2] == '-' or 
-    game.board[3] == '-' or game.board[4] == '-' or game.board[5] == '-' or 
-    game.board[6] == '-' or game.board[7] == '-' or game.board[8] == '-'):
-    choice_1 = int(input("Enter the place to change into \'X\'"))
-    game.player_X(choice_1)
-    choice_2 = int(input("Enter the place to change into \'O\'"))
-    game.player_O(choice_2)
-# else:
-
-    
-
-
-    # def navigator(self):
-    #     self.board[3] = 'x'
-        
-    # def player_x(self):
-    #     print('\'X\' turn...')
-    #     limit_checker = True
-    #     while(limit_checker):
-    #         decision = int(input('Enter any number : '))
-    #         if(decision <= 9 and decision > 0):
-    #             limit_checker = False
-    #             self.board[2] = 'x'
-    #             print(self.board[2])
-    #         else: print("Error enter correct choice")
-
-    # def player_o(self):
-    #     print('\'O\' turn...')
-    #     limit_checker = True
-    #     while(limit_checker):
-    #         decision = int(input('Enter any number : '))
-    #         if(decision <= 9 and decision > 0):
-    #             limit_checker = False
-    #         else: print("Error enter correct choice")
-
-    # def check_diagonals(self):
-    #     self.board[0] == 'x'
-    #     print(self.board[0])
-    #     if(self.board[0] == self.board[1] == self.board[2]):
-    #         if(self.board[0] == 'x'): print(self.x_name+" won the game")
-    #         else: print("o won the game")
-
-
+while True:
+    game.X_turn()
+    game.Y_turn()
