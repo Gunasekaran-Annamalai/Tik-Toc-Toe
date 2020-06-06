@@ -29,8 +29,17 @@ class game_begins:
         game.display_board()
     
     def player_O(self, place):
-        self.board[place] = 'o'
+        if self.board[place] == '-':
+            self.board[place] = 'o'
         game.display_board()
+
+    def X_checker(self, x, o):
+        if self.board[0] == 'x' and self.board[1] == 'x' and self.board[2] == 'x':
+            print(self.x_name + " won the game")
+        elif self.board[0] == 'x' and self.board[4] == 'x' and self.board[8] == 'x':
+            print(self.x_name + " won the game")
+        elif self.board[2] == 'x' and self.board[4] == 'x' and self.board[6] == 'x':
+
 
 x = input('Enter \'X\' name:')
 o = input('Enter \'O\' name:')
@@ -38,12 +47,15 @@ o = input('Enter \'O\' name:')
 game = game_begins(x, o)
 game.display_board()
 
-for i in range(1, 10):
-    print(i)
+while(game.board[0] == '-' or game.board[1] == '-' or game.board[2] == '-' or 
+    game.board[3] == '-' or game.board[4] == '-' or game.board[5] == '-' or 
+    game.board[6] == '-' or game.board[7] == '-' or game.board[8] == '-'):
     choice_1 = int(input("Enter the place to change into \'X\'"))
     game.player_X(choice_1)
     choice_2 = int(input("Enter the place to change into \'O\'"))
     game.player_O(choice_2)
+# else:
+
     
 
 
