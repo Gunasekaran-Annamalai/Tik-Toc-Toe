@@ -21,11 +21,11 @@ class game_begins:
         print(self.board[6] + " | " + self.board[7] + " | " + self.board[8] + "   " + "7 | 8 | 9")
 
     def X_turn(self):
-        choice_1 = int(input("Enter the place to change into \'X\'"))
+        choice_1 = int(input("Enter the place to change into \'X\' : "))
         game.player_X(choice_1)
 
     def O_turn(self):
-        choice_2 = int(input("Enter the place to change into \'O\'"))
+        choice_2 = int(input("Enter the place to change into \'O\' : "))
         game.player_O(choice_2)
 
     def player_X(self, place):
