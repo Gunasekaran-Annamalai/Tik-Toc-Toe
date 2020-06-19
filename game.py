@@ -32,7 +32,7 @@ class game_begins:
         if self.board[place-1] == '-':
             self.board[place-1] = 'x'
             game.display_board()
-        elif self.board[place-1] == 'x':
+        elif self.board[place-1] == 'x' or self.board[place-1] == 'o':
             game.X_turn()
         else:
             game.display_board()
@@ -42,7 +42,7 @@ class game_begins:
         if self.board[place-1] == '-':
             self.board[place-1] = 'o'
             game.display_board()
-        elif self.board[place-1] == 'o':
+        elif self.board[place-1] == 'o' or self.board[place-1] == 'x':
             game.O_turn()
         else:
             game.display_board()
